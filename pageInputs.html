@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .ctrl {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+    </style>
+    <title>動態欄位的範例</title>
+</head>
+
+<body>
+    <h1>訂餐系統</h1>
+    <form action="">
+        <div class="unit">
+            <div class="row">
+                <label for="userName">姓名</label>
+                <input type="text" name="userName" id="userName">
+            </div>
+            <div class="row">
+                <label for="dinner">餐點</label>
+                <select name="dinner" id="dinner">
+                    <option value="A">A套餐</option>
+                    <option value="B">B套餐</option>
+                    <option value="C">C套餐</option>
+                </select>
+            </div>
+        </div>
+        <div class="add">
+
+        </div>
+
+        <div class="ctrl">
+            <button type="button">加一組</button>
+            <button type="submit">送出</button>
+        </div>
+
+    </form>
+
+    <script>
+        let add = document.querySelector(".add");
+        // let btn_add = document.querySelectorAll("button")[0];
+        let btn_add = document.querySelector(".ctrl button");
+
+        btn_add.onclick = function () {
+            let node = document.createElement("div");
+            // node.className = "unit";
+            node.classList.add("unit");
+            node.innerHTML = `<div class="row">
+                                <label for="userName">姓名</label>
+                                <input type="text" name="userName" id="userName">
+                            </div>
+                            <div class="row">
+                                <label for="dinner">餐點</label>
+                                <select name="dinner" id="dinner">
+                                    <option value="A">A套餐</option>
+                                    <option value="B">B套餐</option>
+                                    <option value="C">C套餐</option>
+                                </select>
+                            </div>`
+
+            add.append(node);
+        }
+    </script>
+</body>
+
+</html>
