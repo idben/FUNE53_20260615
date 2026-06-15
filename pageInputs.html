@@ -5,10 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        form {
+            width: 400px;
+        }
+
         .ctrl {
             display: flex;
             justify-content: flex-end;
             gap: 10px;
+        }
+
+        .row {
+            margin-bottom: 4px;
+            display: flex;
+            gap: 5px;
+
+            input {
+                flex: 1;
+            }
+
+            select {
+                flex: 1;
+            }
+        }
+
+        .unit {
+            margin-bottom: 10px;
         }
     </style>
     <title>動態欄位的範例</title>
@@ -43,6 +65,8 @@
     </form>
 
     <script>
+        // 刪除等講完迴圈和事件代理再回來補
+
         let add = document.querySelector(".add");
         // let btn_add = document.querySelectorAll("button")[0];
         let btn_add = document.querySelector(".ctrl button");
