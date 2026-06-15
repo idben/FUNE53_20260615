@@ -9,18 +9,20 @@
             display: none;
         }
     </style>
-    <title>outerHTML</title>
+    <title>textContent</title>
 </head>
 
 <body>
     <p>比賽工業眾人愛情，網站等等，<span class="hide">是這樣，那。</span></p>
     <img src="https://picsum.photos/id/684/350/350" alt="">
+
     <script>
         // 取用內容
-        console.log(document.querySelector("p").outerHTML);
+        // textContent 取得 原始文字
+        console.log(document.querySelector("p").textContent);
 
         // 設定內容
-        document.querySelector("p").outerHTML = "test123"
+        document.querySelector("p").textContent = "test123"
 
     </script>
 </body>
