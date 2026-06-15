@@ -27,13 +27,23 @@
         console.log(typeof undefined);
         console.log(typeof null);
 
-        if (var1 == undefined) { }
-        if (var1 == null) { }
-        if (!var1) { }
+        // if (var1 == undefined) { }
+        // if (var1 == null) { }
+        // if (!var1) { }
         // falsy 家族
         // flase 0 -0 0n
         // ""
         // undefined null NaN
+
+        const content = document.querySelector("#content");
+        console.log(content);
+        if (content) {
+            content.innerHTML = "你好"
+        }
+
+        content && (content.innerHTML = "你好")
+
+
 
     </script>
 </body>
