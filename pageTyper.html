@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .content {
+            font-size: 30px;
+            user-select: none;
+        }
+    </style>
+    <title>打字機效果</title>
+</head>
+
+<body>
+    <div class="content">
+        就算我市內心三大意義解放鄉民，楠雅就會美女電腦氣氛確認你好唱片你有浪費，來說桃園不但，銷售廣告，顯。
+    </div>
+
+    <script>
+        const content = document.querySelector(".content");
+
+        // 取長度
+        console.log(content.innerHTML.trim().length);
+        console.log(content.innerText.length);
+        console.log(content.textContent.trim().length);
+
+        // 取內容文字
+        const text = content.innerText;
+        // 清空畫面準備開始
+        content.innerHTML = "";
+
+        // 內容附加文字的主要程式
+        // content.innerHTML += text[0] // 放第 1 個字
+        // content.innerHTML += text[1] // 放第 2 個字
+        // content.innerHTML += text[2] // 放第 3 個字
+
+        let num = 0;
+
+        window.onclick = function () {
+            if (num < text.length) {
+                content.innerHTML += text[num]
+                num++;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
