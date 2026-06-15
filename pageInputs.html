@@ -20,11 +20,11 @@
         <div class="unit">
             <div class="row">
                 <label for="userName">姓名</label>
-                <input type="text" name="userName" id="userName">
+                <input type="text" name="userName[]" id="userName">
             </div>
             <div class="row">
                 <label for="dinner">餐點</label>
-                <select name="dinner" id="dinner">
+                <select name="dinner[]" id="dinner">
                     <option value="A">A套餐</option>
                     <option value="B">B套餐</option>
                     <option value="C">C套餐</option>
@@ -53,11 +53,11 @@
             node.classList.add("unit");
             node.innerHTML = `<div class="row">
                                 <label for="userName">姓名</label>
-                                <input type="text" name="userName" id="userName">
+                                <input type="text" name="userName[]" id="userName">
                             </div>
                             <div class="row">
                                 <label for="dinner">餐點</label>
-                                <select name="dinner" id="dinner">
+                                <select name="dinner[]" id="dinner">
                                     <option value="A">A套餐</option>
                                     <option value="B">B套餐</option>
                                     <option value="C">C套餐</option>
