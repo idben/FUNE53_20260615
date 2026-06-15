@@ -19,11 +19,18 @@
         // 在記憶體中建立元素
         let node = document.createElement("p");
         node.innerHTML = "這是一個段落";
+        let node2 = document.createElement("p");
+        node2.innerHTML = "這是一個段落 2";
 
         // 把記憶中的元素, 附加到指定容器的最後
-        // area.append(node);
+        // append 可以附加複數個
+        area.append(node, node2);
         // 把記憶中的元素, 附加到指定容器的最前
-        area.prepend(node);
+        // area.prepend(node);
+
+        // 和 append 功能幾乎一樣, 但缺少對應的 prepend
+        // 而且只能附加一個
+        // area.appendChild(node)
     </script>
 </body>
 
