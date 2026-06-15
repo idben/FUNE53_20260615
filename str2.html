@@ -4,10 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .code-num1 {
+            text-transform: uppercase;
+        }
+
+        .code-num2 {
+            text-transform: lowercase;
+        }
+    </style>
     <title>字串屬性和方法</title>
 </head>
 
 <body>
+    <input type="text" class="code-num1">
+    <input type="text" class="code-num2">
 
     <script>
         const word1 = "字串屬性和方法";
@@ -33,6 +44,10 @@
         console.log(sentence.replace("陰天", "晴天"));
         console.log(sentence.replaceAll("陰天", "晴天"));
         console.log(sentence.replace(/陰天/g, "晴天"));
+
+        // 英文轉大小寫
+        console.log("Hello JavaScript!".toUpperCase());
+        console.log("Hello JavaScript!".toLowerCase());
 
 
 
