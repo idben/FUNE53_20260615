@@ -9,10 +9,17 @@
 
 <body>
     <script>
+        // var 宣告的變數會先做提升, 然後再給值
+        // let const 解決這個問題
+        // js 中提升的, 還有 function
+        var aaa;
+        console.log(aaa);
+
         // var 宣告的變數(竟然)會長在 window 物件下
         // let 一般宣告, const 常數宣告
         // 在 script 下宣告的變數是全域變數
         var aaa = 123;
+        aaa = 123;
         let aaa2 = 123;
         const aaa3 = 123;
         console.log(window);
@@ -28,6 +35,18 @@
         var bbb1;
         let bbb2;
         // const bbb3;
+
+
+
+        get1()
+        // console.log("ccc1 = " + ccc1);
+        // console.log("ccc2 = " + ccc2);
+
+        // var 宣告的變數(竟然)可以重新宣告
+        var aaa = "測試 123"
+        // let const 宣告的變數不能重新定義, 不能重新宣告
+        // let aaa2 = "測試 123"
+
 
 
         function get1() {
@@ -47,18 +66,6 @@
             console.log("aaa3 = " + aaa3);
 
         }
-        get1()
-        // console.log("ccc1 = " + ccc1);
-        // console.log("ccc2 = " + ccc2);
-
-        // var 宣告的變數(竟然)可以重新宣告
-        var aaa = "測試 123"
-        // let const 宣告的變數不能重新定義, 不能重新宣告
-        // let aaa2 = "測試 123"
-
-
-
-
     </script>
 </body>
 
