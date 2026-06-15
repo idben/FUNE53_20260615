@@ -9,6 +9,21 @@
             font-size: 30px;
             user-select: none;
         }
+
+        .imgs {
+            position: relative;
+
+            img {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                &.active {
+                    display: block;
+                }
+            }
+        }
     </style>
     <title>打字機效果</title>
 </head>
@@ -18,7 +33,46 @@
         就算我市內心三大意義解放鄉民，楠雅就會美女電腦氣氛確認你好唱片你有浪費，來說桃園不但，銷售廣告，顯。
     </div>
 
+    <div class="imgs">
+        <img src="https://picsum.photos/id/684/600/400" alt="">
+        <img src="https://picsum.photos/id/685/600/400" alt="">
+        <img src="https://picsum.photos/id/686/600/400" alt="">
+        <img src="https://picsum.photos/id/687/600/400" alt="">
+        <img src="https://picsum.photos/id/688/600/400" alt="">
+    </div>
+
     <script>
+        // (人生)跑馬燈
+        const imgs = document.querySelectorAll(".imgs img");
+
+        // 完成一張圖片的顯示
+        // imgs[2].classList.remove("active");
+        // imgs[3].classList.add("active");
+
+        let imgNum = 0;
+        // window.onclick = function () {
+        //     Array.from(imgs).at(imgNum - 1).classList.remove("active");
+        //     imgs[imgNum].classList.add("active");
+        //     imgNum++;
+        //     if (imgNum >= imgs.length) {
+        //         imgNum = 0;
+        //     }
+        //     console.log(imgNum);
+        // }
+
+        setInterval(function () {
+            Array.from(imgs).at(imgNum - 1).classList.remove("active");
+            imgs[imgNum].classList.add("active");
+            imgNum++;
+            if (imgNum >= imgs.length) {
+                imgNum = 0;
+            }
+            console.log(imgNum);
+        }, 150);
+
+
+
+        // 下面是打字機
         const content = document.querySelector(".content");
 
         // 取長度
@@ -38,12 +92,12 @@
 
         let num = 0;
 
-        window.onclick = function () {
-            if (num < text.length) {
-                content.innerHTML += text[num]
-                num++;
-            }
-        }
+        // window.onclick = function () {
+        //     if (num < text.length) {
+        //         content.innerHTML += text[num]
+        //         num++;
+        //     }
+        // }
 
         // 一次性的計時器
         // setTimeout(function () {
@@ -51,13 +105,13 @@
         // }, 3000);
 
         // 把計時器放進變數, 取得計時器 id
-        const timer1 = setInterval(function () {
-            content.innerHTML += text[num];
-            num++;
-            if (num >= text.length) {
-                clearInterval(timer1); // 停止計時器, clearInterval 中要放計時器 id
-            }
-        }, 100);
+        // const timer1 = setInterval(function () {
+        //     content.innerHTML += text[num];
+        //     num++;
+        //     if (num >= text.length) {
+        //         clearInterval(timer1); // 停止計時器, clearInterval 中要放計時器 id
+        //     }
+        // }, 100);
 
 
 
