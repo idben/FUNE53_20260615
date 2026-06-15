@@ -12,10 +12,11 @@
         <h1>要加入的區域</h1>
         <button>+</button>
     </div>
-
+    <!-- <img src="https://picsum.photos/id/431/200/200" alt=""> -->
 
     <script>
         let area = document.querySelector(".area");
+        let btn = document.querySelector("button");
         // 在記憶體中建立元素
         let node = document.createElement("p");
         node.innerHTML = "這是一個段落";
@@ -24,13 +25,25 @@
 
         // 把記憶中的元素, 附加到指定容器的最後
         // append 可以附加複數個
-        area.append(node, node2);
+        // area.append(node, node2);
         // 把記憶中的元素, 附加到指定容器的最前
         // area.prepend(node);
 
         // 和 append 功能幾乎一樣, 但缺少對應的 prepend
         // 而且只能附加一個
         // area.appendChild(node)
+
+        // 插入到中間
+        // area.insertBefore(node, btn);
+
+        btn.onclick = function () {
+            // let node = document.createElement("p")
+            // node.innerHTML = '<img src="https://picsum.photos/id/431/200/200" alt="">'
+            let node = document.createElement("img");
+            // node.setAttribute("src", "https://picsum.photos/id/431/200/200");
+            node.src = "https://picsum.photos/id/431/200/200";
+            area.append(node);
+        }
     </script>
 </body>
 
