@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字串的基本表現方法</title>
+</head>
+
+<body>
+
+    <script>
+        const name1 = "Ben";
+        const name2 = 'Chen';
+
+        // const fullname = name1 + " " + name2; // 字串相加
+        const fullname = `${name1} ${name2}`; // 字串相加現在都改用 字串模版 較多
+        console.log(fullname);
+
+        const sentence = "This is a \\ \n\r \"book\".";
+        console.log(sentence);
+
+        const sentence2 = "Ben is a teacher, and he teaches \
+        front-end courses, such as html, ccs, javaScript, \
+        reactJS, etc.";
+        console.log(sentence2);
+
+        const sentence3 = `Ben is a teacher, and he teaches 
+        front-end courses, such as html, ccs, javaScript, 
+        reactJS, etc.`;
+        console.log(sentence3);
+
+        // 字串模版可以放運算式
+        console.log(`民國 ${2026 - 1911} 年`);
+
+
+
+
+    </script>
+</body>
+
+</html>
