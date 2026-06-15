@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement and append</title>
+</head>
+
+<body>
+    <div class="area">
+        <h1>要加入的區域</h1>
+        <button>+</button>
+    </div>
+
+
+    <script>
+        let area = document.querySelector(".area");
+        // 在記憶體中建立元素
+        let node = document.createElement("p");
+        node.innerHTML = "這是一個段落";
+
+        // 把記憶中的元素, 附加到指定容器的最後
+        // area.append(node);
+        // 把記憶中的元素, 附加到指定容器的最前
+        area.prepend(node);
+    </script>
+</body>
+
+</html>
