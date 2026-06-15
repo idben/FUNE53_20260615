@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>變數宣告的測試</title>
+</head>
+
+<body>
+    <script>
+        // var 宣告的變數(竟然)會長在 window 物件下
+        // let 一般宣告, const 常數宣告
+        // 在 script 下宣告的變數是全域變數
+        var aaa = 123;
+        let aaa2 = 123;
+        const aaa3 = 123;
+        console.log(window);
+
+        // let 宣告的變數, 可以重新賦值; const 不行, 會出錯
+        // var 宣告的變數, 可以重新賦值;
+        // aaa3 = 456
+        aaa2 = 456
+        console.log(aaa2);
+
+        // const 宣告的變數一定要馬上接等號給值, 要初始化
+        // 其他兩個可以宣告起來放著
+        var bbb1;
+        let bbb2;
+        // const bbb3;
+
+
+        function get1() {
+            // var 是 function scope, 是用 function 來區分作用空間
+            var ccc1 = "abc"
+            // let const 是 block scope, 大括號 scope, 是用大括號來區分作用空間
+            let ccc2 = "def"
+            const ccc3 = "xyz"
+
+            // 當全域變數和 function 中的區變數名稱一樣時
+            // 優先使用區域變數
+            var aaa = "abc"
+            let aaa2 = "def"
+
+            console.log("aaa = " + aaa);
+            console.log("aaa2 = " + aaa2);
+            console.log("aaa3 = " + aaa3);
+
+        }
+        get1()
+        // console.log("ccc1 = " + ccc1);
+        // console.log("ccc2 = " + ccc2);
+
+        // var 宣告的變數(竟然)可以重新宣告
+        var aaa = "測試 123"
+        // let const 宣告的變數不能重新定義, 不能重新宣告
+        // let aaa2 = "測試 123"
+
+
+
+
+    </script>
+</body>
+
+</html>
