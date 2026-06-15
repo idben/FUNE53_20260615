@@ -45,6 +45,21 @@
             }
         }
 
+        // 一次性的計時器
+        // setTimeout(function () {
+        //     alert("QQ")
+        // }, 3000);
+
+        // 把計時器放進變數, 取得計時器 id
+        const timer1 = setInterval(function () {
+            content.innerHTML += text[num];
+            num++;
+            if (num >= text.length) {
+                clearInterval(timer1); // 停止計時器, clearInterval 中要放計時器 id
+            }
+        }, 100);
+
+
 
     </script>
 </body>
