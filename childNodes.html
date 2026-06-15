@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>childNodes vs children</title>
+</head>
+
+<body>
+    <div class="grandparent">
+        <div class="parent parent1">Parent1</div>
+        <div class="parent parent2">
+            Parent2<!-- 這個是 Parent2 -->
+            <span class="child child1">Child1</span>
+            <span class="child child2">Child2</span>
+            <span class="child child3">Child3</span>
+        </div>
+    </div>
+
+    <script>
+        let parent1 = document.querySelector(".parent1");
+        let parent2 = document.querySelector(".parent2");
+        console.log(parent1.childNodes);
+        console.log(parent1.children);
+
+
+        console.log(parent2.childNodes);
+        console.log(parent2.children);
+
+    </script>
+</body>
+
+</html>
