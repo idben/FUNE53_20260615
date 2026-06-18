@@ -31,6 +31,16 @@
 
         .unit {
             margin-bottom: 10px;
+            display: flex;
+            /* align-items: center; */
+
+            .left {
+                flex: 1;
+            }
+
+            .btn-del {
+                width: 50px;
+            }
         }
     </style>
     <title>動態欄位的範例</title>
@@ -40,18 +50,22 @@
     <h1>訂餐系統</h1>
     <form action="">
         <div class="unit">
-            <div class="row">
-                <label for="userName">姓名</label>
-                <input type="text" name="userName[]" id="userName">
+            <div class="left">
+                <div class="row">
+                    <label for="userName">姓名</label>
+                    <input type="text" name="userName[]" id="userName">
+                </div>
+                <div class="row">
+                    <label for="dinner">餐點</label>
+                    <select name="dinner[]" id="dinner">
+                        <option value="A">A套餐</option>
+                        <option value="B">B套餐</option>
+                        <option value="C">C套餐</option>
+                    </select>
+                </div>
             </div>
-            <div class="row">
-                <label for="dinner">餐點</label>
-                <select name="dinner[]" id="dinner">
-                    <option value="A">A套餐</option>
-                    <option value="B">B套餐</option>
-                    <option value="C">C套餐</option>
-                </select>
-            </div>
+
+            <!-- <button type="button" class="btn-del">X</button> -->
         </div>
         <div class="add">
 
@@ -70,26 +84,49 @@
         let add = document.querySelector(".add");
         // let btn_add = document.querySelectorAll("button")[0];
         let btn_add = document.querySelector(".ctrl button");
+        const form1 = document.querySelector("form");
+
+        // 事件代理
+        form1.addEventListener("click", function (event) {
+            if (event.target.className != "btn-del") return;
+            console.log("點到了");
+            event.target.parentNode.remove();
+        });
+
+        // const btn_dels = document.querySelectorAll(".btn-del");
+        // for (let i = 0; i < btn_dels.length; i++) {
+        //     btn_dels[i].addEventListener("click", delOne);
+        // }
 
         btn_add.onclick = function () {
             let node = document.createElement("div");
             // node.className = "unit";
             node.classList.add("unit");
-            node.innerHTML = `<div class="row">
-                                <label for="userName">姓名</label>
-                                <input type="text" name="userName[]" id="userName">
-                            </div>
-                            <div class="row">
-                                <label for="dinner">餐點</label>
-                                <select name="dinner[]" id="dinner">
-                                    <option value="A">A套餐</option>
-                                    <option value="B">B套餐</option>
-                                    <option value="C">C套餐</option>
-                                </select>
-                            </div>`
+            node.innerHTML = `<div class="left">
+                                    <div class="row">
+                                        <label for="userName">姓名</label>
+                                        <input type="text" name="userName[]" id="userName">
+                                    </div>
+                                    <div class="row">
+                                        <label for="dinner">餐點</label>
+                                        <select name="dinner[]" id="dinner">
+                                            <option value="A">A套餐</option>
+                                            <option value="B">B套餐</option>
+                                            <option value="C">C套餐</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn-del">X</button>`
 
             add.append(node);
+            // 傳統做法, 加新元素就緊接著註冊事件
+            // node.querySelector(".btn-del").addEventListener("click", delOne);
         }
+
+        // function delOne() {
+        //     this.parentNode.remove()
+        // }
     </script>
 </body>
 
